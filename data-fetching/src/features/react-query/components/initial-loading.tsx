@@ -1,12 +1,11 @@
 import { TopicViewer } from "@/features/common-elements/components/topic-viewer";
 import { ComponentsHolder } from "@/shared/common-layout/components/components-holder";
-import { useFirstLoad } from "../hooks";
+import { useInitialLoading } from "../hooks";
 
-export const EffectFirstLoad = () => {
-  const [data, isLoading] = useFirstLoad();
-
+export const InitialLoading = () => {
+  const { data, isLoading } = useInitialLoading();
   return (
-    <ComponentsHolder title="Direct fetching with effect on first load">
+    <ComponentsHolder title="Initial loading with React Query">
       <TopicViewer data={data} isLoading={isLoading} />
     </ComponentsHolder>
   );
