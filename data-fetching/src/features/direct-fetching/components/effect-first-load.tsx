@@ -9,7 +9,7 @@ export const EffectFirstLoad = () => {
     <ComponentsHolder title="Direct fetching with effect on first load">
       {isLoading ? (
         <p>
-          Loading <BIcon className="circle" />
+          Loading <BIcon className="arrow-repeat animate-spin inline-block" />
         </p>
       ) : (
         <ul className="list-disc pl-5">
