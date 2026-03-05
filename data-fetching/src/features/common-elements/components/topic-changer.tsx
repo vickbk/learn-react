@@ -11,7 +11,7 @@ export const TopicChanger = ({
         <label className="grid gap-4 w-full">
           Topic:
           <input
-            className="py-1 px-2"
+            className="py-1 px-2 outline focus:outline-blue-300 rounded-xs"
             type="text"
             name="topic"
             placeholder="ex. react"
