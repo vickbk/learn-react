@@ -8,14 +8,21 @@ export function useFirstLoad() {
   const [data, setData] = useState<ALGOLIA_STORY[]>([]);
   const [isLoading, { setFalse: stopLoading }] = useBoolean(true);
   useEffect(() => {
+    let didCancel = false;
     async function fetchData() {
       const {
         data: { hits },
       } = await axios(`${ALGOLIA_URL}?query=react`);
-      setData(hits);
-      stopLoading();
+      if (!didCancel) {
+        setData(hits);
+        stopLoading();
+      }
     }
     fetchData();
+
+    return () => {
+      didCancel = true;
+    };
   }, [stopLoading]);
   return [data, isLoading] as const;
 }
