@@ -1,12 +1,13 @@
 import { ALGOLIA_URL } from "@/app/scripts";
+import type { ALGOLIA_STORY } from "@/app/types";
 import { useBoolean } from "@/shared";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import type { ALGOLIA_STORY } from "../types/first-load-types";
 
 export function useFirstLoad() {
   const [data, setData] = useState<ALGOLIA_STORY[]>([]);
   const [isLoading, { setFalse: stopLoading }] = useBoolean(true);
+
   useEffect(() => {
     let didCancel = false;
     async function fetchData() {

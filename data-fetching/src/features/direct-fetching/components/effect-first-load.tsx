@@ -1,6 +1,6 @@
+import { TopicViewer } from "@/features/common-elements/components/topic-viewer";
 import { ComponentsHolder } from "@/shared/common-layout/components/components-holder";
 import { useFirstLoad } from "../hooks";
-import { TopicViewer } from "./topic-viewer";
 
 export const EffectFirstLoad = () => {
   const [data, isLoading] = useFirstLoad();

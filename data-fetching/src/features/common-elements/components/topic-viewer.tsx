@@ -1,5 +1,5 @@
+import type { ALGOLIA_STORY } from "@/app/types";
 import { BIcon } from "@/shared/icons/components/b-icon";
-import type { ALGOLIA_STORY } from "../types/first-load-types";
 
 export const TopicViewer = ({
   data,
